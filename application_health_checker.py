@@ -15,14 +15,11 @@ import requests
 import logging
 import time
 
-# Set up logging
 logging.basicConfig(filename='app_health.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Application URL to check
 APPLICATION_URL = 'https://tour2tech.com/'
 
-# Time interval between checks (in seconds)
 CHECK_INTERVAL = 60
 
 def check_application_health(url):
@@ -45,7 +42,6 @@ def main():
         status = check_application_health(APPLICATION_URL)
         logging.info(f'Application status: {status}')
 
-        # Wait for the specified interval before checking again
         time.sleep(CHECK_INTERVAL)
 
 if __name__ == '__main__':
