@@ -14,11 +14,9 @@ import logging
 import time
 from datetime import datetime
 
-# Set up logging
 logging.basicConfig(filename='system_health.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Define threshold values
 CPU_THRESHOLD = 80.0  # in percentage
 MEMORY_THRESHOLD = 80.0  # in percentage
 DISK_THRESHOLD = 80.0  # in percentage
@@ -64,7 +62,6 @@ def main():
         logging.info(f'Disk Usage: {disk_usage}%')
         logging.info(f'Running Processes: {running_processes}')
 
-        # Wait for a specified interval before checking again (e.g., 60 seconds)
         time.sleep(60)
 
 if __name__ == '__main__':
